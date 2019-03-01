@@ -72,8 +72,10 @@ protected void change_input(object me, int flag, string arg)
         text = arg;
         arg = filter_color(arg);
 
+#ifdef CONFIG_NON_UTF8
         if( arg && query_temp("big5", me) )
                 text = LANGUAGE_D->Big52GB(text);
+#endif
 
         if( !arg ) arg = "";
 

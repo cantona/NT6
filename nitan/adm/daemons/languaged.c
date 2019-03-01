@@ -257,11 +257,13 @@ string input(string str, object me)
             if (! str || ! me)
                 return str;
 
+#ifdef CONFIG_NON_UTF8
             if (query_temp("big5", me))
             {
                 return toGB(str);
                 // toGB()
             }
+#endif
             return str;
 }
 
@@ -269,11 +271,13 @@ string output(string str, object me)
 {
             if (! str || ! me)
                 return str;
+#ifdef CONFIG_NON_UTF8
             if (query_temp("big5", me))
             {
                 return GB2Big5(str);
                 // toBig5()
             }
+#endif
             return str;
 }
 

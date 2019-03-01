@@ -92,8 +92,10 @@ void input_bug_title(object me, string title)
                 return me->finish_input();
         }
 
+#ifdef CONFIG_NON_UTF8
         if( query_temp("big5", me) )
                 title = LANGUAGE_D->Big52GB(title);
+#endif
 
         tell_object(me, "你所輸入的 Bug 回報主題為：“"+title+NOR+"”\n");
         tell_object(me, HIY"請輸入欲回報的 Bug 詳細內容。\n"NOR);

@@ -230,7 +230,7 @@ void logon(object ob)
                 input_to("get_version", ob);
         }
 
-#if 0
+#ifdef CONFIG_NON_UTF8
         if( !query_temp("big5", ob)){
                 write(HIC "□□□□才棟□虜砰□叫塊□GB/BIG5□跑□才棟□□□鋇□魁□□□\n" NOR
                       "目前的字符集是簡體，請輸入GB/BIG5改變字符集，或直接登錄用戶。\n"
@@ -374,7 +374,7 @@ protected void get_id(string arg, object ob)
 
         arg = lower_case(arg);
 
-#if 0
+#ifdef CONFIG_NON_UTF8
         if( arg == "big5" ) {
                 set_temp("big5", 1, ob);
                 logon(ob);
@@ -935,14 +935,9 @@ TEXT NOR
 protected void get_surname(string arg, object ob)
 {
         if( arg && strlen(arg) > 0 ) {
-#if 0
+#ifdef CONFIG_NON_UTF8
                 if( query_temp("big5", ob) )
-#ifdef LONELY_IMPROVED
-                        // arg = B2G(arg);
                         arg = LANGUAGE_D->toGB(arg);
-#else
-                        arg = LANGUAGE_D->toGB(arg);
-#endif
 #endif
                 if( !check_legal_name(arg, 4) ) {
                         write("您的中文" HIG "姓氏" NOR "(不要超過兩個漢字)：\n");
@@ -964,14 +959,9 @@ protected void get_name(string arg, object ob)
         string fname;
         string result;
 
-#if 0
+#ifdef CONFIG_NON_UTF8
         if( query_temp("big5", ob) )
-#ifdef LONELY_IMPROVED
-                // arg = B2G(arg);
                 arg = LANGUAGE_D->toGB(arg);
-#else
-                arg = LANGUAGE_D->toGB(arg);
-#endif
 #endif
         if( !check_legal_name(arg, 4) ) {
                 write("您的中文" HIY "名字" NOR "(不要超過兩個漢字)：\n");
@@ -1357,7 +1347,7 @@ varargs void enter_world(object ob, object user, int silent, int timer, string a
         ob->clear_msg_buffer();
 
         //user->set_encoding(ob->query_encoding());
-#if 0
+#ifdef CONFIG_NON_UTF8
         if( query_temp("big5", ob) ) set_temp("big5", 1, user);
 #endif
         if( query_temp("tomud", ob) ) set_temp("tomud", 1, user);
@@ -1631,7 +1621,7 @@ varargs void reconnect(object ob, object user, int silent)
 
         set_temp("link_ob", ob, user);
         set_temp("body_ob", user, ob);
-#if 0
+#ifdef CONFIG_NON_UTF8
         if( query_temp("big5", ob) )
                 set_temp("big5", 1, user);
         else

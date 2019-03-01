@@ -14,11 +14,8 @@ int edit(function callback, string text)
 
 void input_line(string line, string text, function callback)
 {
+#ifdef CONFIG_NON_UTF8
         if( line && query_temp("big5", this_player(1)) )
-#ifdef LONELY_IMPROVED
-                // line = B2G(line);
-                line = LANGUAGE_D->Big52GB(line); 
-#else
                 line = LANGUAGE_D->Big52GB(line);
 #endif
         if( line == "." ) {

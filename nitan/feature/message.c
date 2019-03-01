@@ -146,8 +146,10 @@ void receive_message(string msgclass, string msg)
                 if( playerp(this_object()) ) this_object()->do_trigger(msg);
                 return;
         }
+#ifdef CONFIG_NON_UTF8
         if( query_temp("big5") )
                 msg = LANGUAGE_D->GB2Big5(msg);
+#endif
         if( msgclass == "telnet" ) {
                 receive(msg);
                 return;

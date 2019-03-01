@@ -61,8 +61,10 @@ string query_save_file()
 
 nomask void catch_tell(string msg, string classes)
 {
+#ifdef CONFIG_NON_UTF8
         if( query_temp("big5", this_object()) )
                 msg = (string)LANGUAGE_D->toBig5(msg);
+#endif
 
         while(strlen(msg) > 0) {
                 receive(msg[0..__LARGEST_PRINTABLE_STRING__ - 1]);
@@ -84,8 +86,10 @@ nomask varargs void directly_receive(string msg)
 void receive_message(string type, string str)
 {
         if( type!= "write" ) return;
+#ifdef CONFIG_NON_UTF8
         if( query_temp("big5", this_object()) )
                 str = (string)LANGUAGE_D->toBig5(str);
+#endif
         receive(str);
 }
 
@@ -110,8 +114,10 @@ nomask void window_size(int width, int height)
 
 string process_input(string str)
 {
+#ifdef CONFIG_NON_UTF8
         if( query_temp("big5", this_object()) )
                 str = LANGUAGE_D->Big52GB(str);
+#endif
         return str;
 }
 

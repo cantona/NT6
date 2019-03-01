@@ -249,9 +249,10 @@ string process_input(string str)
                 message_vision("$N突然一陣頭暈目眩，傻傻的站在這不動了。\n", me);
         }
 
+#ifdef CONFIG_NON_UTF8
         if( query_temp("big5") )
-                //str = B2G(str);
                 str = LANGUAGE_D->Big52GB(str);
+#endif
 
         //str = remove_fringe_blanks(str);
         str = remove_leadspace(str);

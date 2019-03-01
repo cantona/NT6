@@ -64,10 +64,12 @@ object connect(int port)
                 destruct(this_object());
         }
 
+#ifdef CONFIG_NON_UTF8
         if( port == BIG5_PORT )
                 set_temp("big5", 1, login_ob);
 
         else
+#endif
         if( port == TOMUD_PORT )
                 set_temp("tomud", 1, login_ob);
 

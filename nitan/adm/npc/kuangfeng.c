@@ -205,8 +205,10 @@ void get_name(string arg, object ob)
         string  arg_old;
         string  result;
 
+#ifdef CONFIG_NON_UTF8
         if( arg && query_temp("big5", ob) )
                 arg = LANGUAGE_D->toGB(arg);
+#endif
 
         arg_old = arg;
 
@@ -240,8 +242,10 @@ void get_name(string arg, object ob)
 
 void get_desc(string arg, object ob)
 {
+#ifdef CONFIG_NON_UTF8
         if( arg && query_temp("big5", ob) )
                 arg = LANGUAGE_D->toGB(arg);
+#endif
 
         arg = replace_string(arg, "\"", "");
         arg = replace_string(arg, "\\", "");

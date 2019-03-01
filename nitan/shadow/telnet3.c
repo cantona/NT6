@@ -37,8 +37,10 @@ void telnet_input(string str)
 
         input_to("telnet_input");
 
+#ifdef CONFIG_NON_UTF8
         // str = G2B(str); 
         str = (string)LANGUAGE_D->toBig5(str);
+#endif
 
         if (strlen(str) + strlen(from_user) < MAX_PENDING_INPUT)
         {
